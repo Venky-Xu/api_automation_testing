@@ -1,0 +1,17 @@
+
+config:
+    name: "register"
+    base_url: "https://www.backoffice.test17.shub.us"
+
+teststeps:
+-
+    name: registerStoreNameCheck
+    api: api/register_store_name_check.yml
+
+-
+    name: registerEmailCheck
+    api: api/register_email_check.yml
+
+-
+    name: register
+    api: api/register.yml

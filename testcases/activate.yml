@@ -1,0 +1,10 @@
+
+config:
+    name: "activate"
+    base_url: "https://www.backoffice.test17.shub.us"
+
+teststeps:
+-
+    name: activationStatus
+    api: api/activationStatus.yml
+

@@ -1,0 +1,32 @@
+name: activationStatus
+request:
+    url: /api/activationStatus
+    verify: false
+    method: GET
+    headers:
+        Content-Type: application/json
+        Accept: application/json
+        storehub-version: 2.25.0.1
+        User-Agent: StoreHub/2.25.0 (iPad; iOS 12.1.4; Scale/2.00)
+        Cookie: storehubhq.locale=en; connect.sid=s%3ANecv0Z0T7JqifKbTdjIh3Alr3iJP8nUc.dHzkJHkvXtXg8DaJT13pA2SkrgHGidbKmV5En5Xzxeo
+        Accept-Language: en-CN;q=1, th-CN;q=0.9, zh-Hans-CN;q=0.8
+        storehub-registerId: 5e69a298fb384c000655226f
+        storehub-business: bigappledonuts
+        storehub-token: ba7fd8a0640b11eaa58471d3dfb1d7ea
+    json:
+      {
+        "device":{
+          "version":"2.25.0.1",
+          "systemVersion":"12.1.4",
+          "model":"iPad",
+          "platform":"iOS"
+
+        },
+        "location":{
+          "type": "Point",
+          "coordinates": [ 106.07762539477008, 30.788848876953125 ]
+
+        }
+      }
+validate:
+    - eq: [status_code, 200]
