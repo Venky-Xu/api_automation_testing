@@ -1,0 +1,7 @@
+name: Get job by receipt number
+request:
+  url: /api/jobs/$receiptNumber
+  method: GET
+  headers:
+      Content-Type: application/json
+      Accept: application/json

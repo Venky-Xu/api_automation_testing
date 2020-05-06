@@ -1,0 +1,7 @@
+name: Get job's log
+request:
+  url: /api/logs/$receiptNumber/$job_id
+  method: GET
+  headers:
+      Content-Type: application/json
+      Accept: application/json

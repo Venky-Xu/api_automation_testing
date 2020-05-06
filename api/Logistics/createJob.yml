@@ -1,0 +1,37 @@
+name: Create Job
+request:
+    url: /api/create
+    method: POST
+    headers:
+        Content-Type: application/json
+        Accept: application/json
+        Authorization: Token token=vEdxB6Boic_9a2zSQyb8
+    json:
+      {
+        "businessName": "burgerabangburn",
+        "country": "MY",
+        "receiptNumber": $receiptNumber,
+        "channel": 3,
+        "pickup": {
+          "name": "Beep Delivery",
+          "location": "Burger Bakar Abang Burn, 23, Jalan Remia 4/KS6, Bandar Botanic, Klang Selangor Darul Ehsan ",
+          "locationLat": 2.9986935,
+          "locationLong": 101.4447148,
+          "locationUrl": "https://maps.google.com/?cid=4136546177124712258",
+          "startAt": "2020-04-22T09:45:28.832Z",
+          "locationNotes": "Burger Bakar Abang Burn",
+          "personInChargeName": "Beep Delivery",
+          "personInChargePhoneNum": "0182338404"
+        },
+        "dropoff": {
+          "location": "Federal Territory of Kuala Lumpur, Malaysia",
+          "locationLat": 3.157929,
+          "locationLong": 101.717469,
+          "recipientName": "Wawa",
+          "recipientPhoneNum": "+60186609301"
+        },
+        "notes": "\nPick-up ID:0002\n\nReceipt #:816517617663374\n\nOrder Details:\n1x Cheese - BAG - Chicken Chop [Z-Cheesy]\n1x Cheezy Sausage >>>\n\nRider Notes:\n\n                ",
+        "nonHalal": false,
+        "isTest": false,
+        "isPreOrder": false
+      }
