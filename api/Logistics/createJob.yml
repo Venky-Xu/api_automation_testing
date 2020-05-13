@@ -12,6 +12,7 @@ request:
         "country": "MY",
         "receiptNumber": $receiptNumber,
         "channel": 3,
+        "name": $name,
         "pickup": {
           "name": "Beep Delivery",
           "location": "Burger Bakar Abang Burn, 23, Jalan Remia 4/KS6, Bandar Botanic, Klang Selangor Darul Ehsan ",

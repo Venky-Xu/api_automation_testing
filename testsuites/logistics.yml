@@ -1,0 +1,36 @@
+config:
+    name: "Test create, check log and cancel of logistics job"
+    verify: False
+    variables:
+        receiptNumber: ${create_uuid_15()}
+    base_url: ${ENV(TEST5)}
+
+testcases:
+-
+    name: Core event consumer job
+    testcase: testcases/core_event_goget_default.yml
+-
+    name: Designated lalamove as partner and cancel job while status is created
+    testcase: testcases/lalamove_created_cancel.yml
+    variables:
+        name: "lalamove"
+-
+    name: Designated lalamove as partner and cancel job while status is claimed
+    testcase: testcases/lalamove_claimed_cancel.yml
+    variables:
+        name: "lalamove"
+-
+    name: Designated lalamove as partner and cancel job while status is pickedup
+    testcase: testcases/lalamove_pickedup_cancel.yml
+    variables:
+        name: "lalamove"
+-
+    name: Designated mrspeedy as partner and cancel job while status is created
+    testcase: testcases/mrspeedy_created_cancel.yml
+    variables:
+        name: "mrspeedy"
+-
+    name: Designated mrspeedy as partner and cancel job while status is claimed
+    testcase: testcases/mrspeedy_claimed_cancel.yml
+    variables:
+        name: "mrspeedy"

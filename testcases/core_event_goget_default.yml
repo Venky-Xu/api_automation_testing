@@ -1,0 +1,46 @@
+- config:
+    name: "jobs"
+
+- test:
+    name: "create a logistics job"
+    variables:
+        name: null
+    api: api/Logistics/createJob.yml
+    extract:
+        - success: content.success
+    validate:
+        - eq: [status_code, 200]
+        - eq: [$success, True]
+
+
+- test:
+    name: "Get jobs by receipt number"
+    api: api/Logistics/getJobbyReceiptNumber.yml
+    setup_hooks:
+        - ${sleep(5)}
+    extract:
+        - partner_name: content.jobs.0.name
+        - job_id: content.jobs.0.id
+    validate:
+        - eq: [status_code, 200]
+
+
+- test:
+    name: "Cancel a job"
+    variables:
+        name: "goget"
+    api: api/Logistics/cancelAJob.yml
+    validate:
+        - eq: [status_code, 200]
+
+
+- test:
+    name: "Get logs by job id"
+    api: api/Logistics/getLogistics_logs.yml
+    setup_hooks:
+        - ${sleep(5)}
+    extract:
+        - log_status: content.logs.-1.body.status
+    validate:
+        - eq: [status_code, 200]
+        - eq: [$log_status, "cancelled"]

@@ -1,6 +1,6 @@
 name: Cancel a job
 request:
-  url: /api/jobs/$receiptNumber/$partner_name/$job_id
+  url: /api/jobs/$receiptNumber/$name/$job_id
   method: DELETE
   headers:
       Content-Type: application/json
