@@ -15,8 +15,8 @@ config:
 testcases:
 -
     name: register flow
-    testcase: testcases/register.yml
+    testcase: testcases/mobileCases/register.yml
 
 -
     name: activate flow
-    testcase: testcases/activate.yml
+    testcase: testcases/mobileCases/activate.yml

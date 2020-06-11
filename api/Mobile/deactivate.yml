@@ -1,0 +1,12 @@
+name: "deactivate"
+request:
+    url: /api/deactivate
+    method: POST
+    headers:
+      storehub-version: 2.28.0.1
+      Cookie: storehubhq.locale=en; connect.sid=s%3AjyY6aXLM57IPtAzYVwA8Ng6Yn5W3K0Hf.5D8BNAkqfI8XCgJR8v6aYPzijQS1rfTFhnSViUO%2F%2FBg
+      storehub-business: $business_name
+      storehub-registerId: $register_object_id
+      storehub-token: $api_token
+    json:
+      {"registerId":$id}

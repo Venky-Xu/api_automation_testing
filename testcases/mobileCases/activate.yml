@@ -10,5 +10,55 @@
         - eq: [status_code, 200]
         - eq: [$result, true]
 
+- test:
+    name: "Verify PIN code is valid"
+    api: api/Mobile/validatePIN.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "reset badge number"
+    api: api/Mobile/resetBadgeNumber.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "shifts"
+    api: api/Mobile/shifts.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "registerDeviceToken"
+    api: api/Mobile/registerDeviceToken.yml
+    validate:
+        - eq: [status_code, 200]
 
 
+- test:
+    name: "activateMultiChoose"
+    api: api/Mobile/activateMultiChoose.yml
+    extract:
+        - code: content.0.code
+        - id: content.0.id
+    validate:
+        - eq: [status_code, 300]
+
+- test:
+    name: "activate"
+    api: api/Mobile/activate.yml
+    extract:
+        - business_name: content.name
+        - register_object_id: content.registerObjectId
+        - api_token: content.apiToken
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "deactivate"
+    api: api/Mobile/deactivate.yml
+    extract:
+        - result: content
+    validate:
+        - eq: [status_code, 200]
+        - eq: [$result, "OK"]

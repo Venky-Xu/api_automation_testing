@@ -1,0 +1,10 @@
+name: "activationStatus"
+request:
+    url: /api/registerDeviceToken
+    method: POST
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}
+    json:
+      {"business":"apiautomation","registerId":"5ee092448f75e50007bb9d85","token": "3ac42690aafe11eaa15d89a559b7c9ed"}

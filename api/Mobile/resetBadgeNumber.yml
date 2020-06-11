@@ -1,0 +1,10 @@
+name: "activationStatus"
+request:
+    url: /api/resetBadgeNumber
+    method: POST
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}
+    json:
+      {"isOnline":false,"business":"apiautomation","registerId":"5ee092448f75e50007bb9d85"}

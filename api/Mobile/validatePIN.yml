@@ -1,0 +1,10 @@
+name: "activationStatus"
+request:
+    url: /api/validatePIN
+    method: POST
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN)}
+    json:
+      {"pin":1709,"business":"apiautomation"}
