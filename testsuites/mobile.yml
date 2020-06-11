@@ -1,0 +1,22 @@
+config:
+    name: "Activate, Sync, Transactions, Customer, Product, Other"
+    verify: False
+    base_url: ${ENV(POS_TEST16)}
+    request:
+      headers:
+        Content-Type: application/json
+        Accept: application/json
+        Accept-Language: en-CN;q=1, th-CN;q=0.9, zh-Hans-CN;q=0.8
+        Connection: keep-alive
+        storehub-version: ${ENV(STOREHUB_VERSION)}
+        User-Agent: ${ENV(USER_AGENT)}
+
+
+testcases:
+-
+    name: register flow
+    testcase: testcases/register.yml
+
+-
+    name: activate flow
+    testcase: testcases/activate.yml

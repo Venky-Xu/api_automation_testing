@@ -1,0 +1,15 @@
+name: register
+request:
+    url: /api/register
+    method: POST
+    json:
+      {
+        "phone":"17602853684",
+        "password":"A12345678",
+        "country":"CN",
+        "timezone":"Asia/Shanghai",
+        "email":$mail,
+        "currency":"CNY",
+        "name":$name
+      }
+

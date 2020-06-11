@@ -1,0 +1,32 @@
+- config:
+    name: "register"
+    variables:
+        mail: ${mail()}
+        name: ${storename()}
+    request:
+        headers:
+            Cookie: storehubhq.locale=en; connect.sid=s%3ANecv0Z0T7JqifKbTdjIh3Alr3iJP8nUc.dHzkJHkvXtXg8DaJT13pA2SkrgHGidbKmV5En5Xzxeo
+
+- test:
+    name: "Check store name that entered into register page is available"
+    api: api/Mobile/register_store_name_check.yml
+    extract:
+        - result: content.result
+    validate:
+        - eq: [status_code, 200]
+        - eq: [$result,"true"]
+
+- test:
+    name: "Check email that entered into register page is available"
+    api: api/Mobile/register_email_check.yml
+    extract:
+        - result: content.result
+    validate:
+        - eq: [status_code, 200]
+        - eq: [$result,"true"]
+
+- test:
+    name: "Register device"
+    api: api/Mobile/register.yml
+    validate:
+        - eq: [status_code, 200]

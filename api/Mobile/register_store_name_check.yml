@@ -1,0 +1,7 @@
+
+name: registerStoreNameCheck
+request:
+    url: /api/registerStoreNameCheck
+    method: POST
+    json:
+      {"name":$name, "source":"app"}

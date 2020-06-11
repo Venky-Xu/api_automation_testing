@@ -1,0 +1,14 @@
+- config:
+    name: "activate"
+
+- test:
+    name: "Check device is is Activated"
+    api: api/Mobile/activationStatus.yml
+    extract:
+        - result: content.isActivated
+    validate:
+        - eq: [status_code, 200]
+        - eq: [$result, true]
+
+
+

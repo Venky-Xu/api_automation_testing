@@ -1,0 +1,7 @@
+name: registerEmailCheck
+request:
+    url: /api/registerEmailCheck
+    method: POST
+    json:
+      {"email":$mail, "source":"app"}
+

@@ -16,7 +16,7 @@
     name: "Get jobs by receipt number"
     api: api/Logistics/getJobbyReceiptNumber.yml
     setup_hooks:
-        - ${sleep(3)}
+        - ${sleep(5)}
     extract:
         - job_id: content.jobs.0.id
         - job_status: content.jobs.0.status
