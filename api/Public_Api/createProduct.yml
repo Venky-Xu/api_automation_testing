@@ -1,0 +1,14 @@
+name: "Create a new product"
+request:
+    url: /products
+    method: POST
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}
+    json: 
+      {
+        "name":"Test_Public_Api",
+        "sku":"$sku",
+        "priceType":"fixed",
+        "unitPrice":200,
+        "trackStockLevel":true
+      }

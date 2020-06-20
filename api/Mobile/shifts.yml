@@ -1,10 +1,54 @@
 name: "activationStatus"
 request:
-    url: /api/shifts
-    method: POST
-    headers:
-      storehub-business: ${ENV(STOREHUB_BUSINESS)}
-      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
-      storehub-token: ${ENV(STOREHUB_TOKEN )}
-    json:
-      {"shiftId":"B2D12A21-72AA-49D6-8718-6DA993B10926","cancelledAmount":0,"cashSalesRoundedAmount":0,"openBy":"5df30178e192cc5fa77c103a","returns":[{"amount":0,"count":0,"paymentMethod":"Cash"},{"amount":0,"count":0,"paymentMethod":"CreditCard"},{"amount":0,"count":0,"paymentMethod":"DebitCard"}],"closeBy":"5df30178e192cc5fa77c103a","registerId":2,"taxSummary":{},"cancelledCount":0,"payIns":[],"storeId":"5df30178e192cc5fa77c1037","closeTime":"2020-06-08T02:52:10.446Z","discountedCount":0,"returnsRoundedAmount":0,"expectedDrawer":0.019999999552965164,"discountedAmount":0,"deposits":[{"amount":0,"count":0,"paymentMethod":"Cash"},{"amount":0,"count":0,"paymentMethod":"CreditCard"},{"amount":0,"count":0,"paymentMethod":"DebitCard"}],"sales":[{"amount":0,"count":0,"paymentMethod":"Cash"},{"amount":0,"count":0,"paymentMethod":"CreditCard"},{"amount":0,"count":0,"paymentMethod":"DebitCard"}],"enableCashback":false,"openTime":"2020-06-05T08:17:39.933Z","transactionCount":0,"salesRoundedAmount":0,"openingAmount":0.02,"registerObjectId":"5e97fc862bac800007f23646","cashReturnsRoundedAmount":0,"transactionsWithKeyFields":[],"closingAmount":0,"payouts":[]}
+  url: /api/shifts
+  method: POST
+  headers:
+    storehub-business: ${ENV(STOREHUB_BUSINESS)}
+    storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+    storehub-token: ${ENV(STOREHUB_TOKEN )}
+  json:
+    {
+      "shiftId": "B2D12A21-72AA-49D6-8718-6DA993B10926",
+      "cancelledAmount": 0,
+      "cashSalesRoundedAmount": 0,
+      "openBy": "5df30178e192cc5fa77c103a",
+      "returns":
+        [
+          { "amount": 0, "count": 0, "paymentMethod": "Cash" },
+          { "amount": 0, "count": 0, "paymentMethod": "CreditCard" },
+          { "amount": 0, "count": 0, "paymentMethod": "DebitCard" },
+        ],
+      "closeBy": "5df30178e192cc5fa77c103a",
+      "registerId": 2,
+      "taxSummary": {},
+      "cancelledCount": 0,
+      "payIns": [],
+      "storeId": "5df30178e192cc5fa77c1037",
+      "closeTime": "2020-06-08T02:52:10.446Z",
+      "discountedCount": 0,
+      "returnsRoundedAmount": 0,
+      "expectedDrawer": 0.019999999552965164,
+      "discountedAmount": 0,
+      "deposits":
+        [
+          { "amount": 0, "count": 0, "paymentMethod": "Cash" },
+          { "amount": 0, "count": 0, "paymentMethod": "CreditCard" },
+          { "amount": 0, "count": 0, "paymentMethod": "DebitCard" },
+        ],
+      "sales":
+        [
+          { "amount": 0, "count": 0, "paymentMethod": "Cash" },
+          { "amount": 0, "count": 0, "paymentMethod": "CreditCard" },
+          { "amount": 0, "count": 0, "paymentMethod": "DebitCard" },
+        ],
+      "enableCashback": false,
+      "openTime": "2020-06-05T08:17:39.933Z",
+      "transactionCount": 0,
+      "salesRoundedAmount": 0,
+      "openingAmount": 0.02,
+      "registerObjectId": "5e97fc862bac800007f23646",
+      "cashReturnsRoundedAmount": 0,
+      "transactionsWithKeyFields": [],
+      "closingAmount": 0,
+      "payouts": [],
+    }

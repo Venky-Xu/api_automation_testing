@@ -1,0 +1,6 @@
+name: "getProductslist"
+request:
+    url: /products
+    method: GET
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}

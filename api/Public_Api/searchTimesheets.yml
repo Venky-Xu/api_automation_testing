@@ -1,0 +1,6 @@
+name: "searchTimesheets"
+request:
+    url: /timesheets
+    method: GET
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}

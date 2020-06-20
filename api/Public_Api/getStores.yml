@@ -1,0 +1,6 @@
+name: "getStores"
+request:
+    url: /stores
+    method: GET
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}

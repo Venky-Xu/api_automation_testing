@@ -1,0 +1,6 @@
+name: "getInventory"
+request:
+    url: /inventory/$storeId
+    method: GET
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}

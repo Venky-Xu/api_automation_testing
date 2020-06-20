@@ -1,0 +1,6 @@
+name: "Cancel a transaction"
+request:
+    url: /transactions/$refId/cancel
+    method: POST
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}

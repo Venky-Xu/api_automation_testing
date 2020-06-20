@@ -1,0 +1,38 @@
+- config:
+    name: "Public-Api test cases"
+    base_url: ${ENV(PUBLIC_API_BASE_URL)}
+
+
+- test:
+    name: "Get Product Lists"
+    api: api/Public_Api/getProducts.yml
+    extract:
+        id: content.0.id
+        unitPrice: content.0.unitPrice
+
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "Get Transactions"
+    api: api/Public_Api/getTransactions.yml
+    extract:
+        storeId: content.0.storeId
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "Add a transaction"
+    api: api/Public_Api/addTransaction.yml
+    extract:
+        refId: content.refId
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "Cancel a transaction"
+    api: api/Public_Api/cancelTransaction.yml
+    validate:
+        - eq: [status_code, 200]
+
+ 

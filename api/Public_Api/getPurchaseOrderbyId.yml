@@ -1,0 +1,6 @@
+name: "getPurchaseOrders"
+request:
+    url: /purchaseOrders/$purchaseOrderId
+    method: GET
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}

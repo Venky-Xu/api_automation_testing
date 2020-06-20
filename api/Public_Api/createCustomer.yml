@@ -1,0 +1,13 @@
+name: "Create a new customer"
+request:
+    url: /customers
+    method: POST
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}
+    json: 
+      {
+        "firstName":"Divya11",
+        "lastName":"Singla",
+        "phone":"60143636317",
+        "refId":"$uniqueRefId"
+      }
