@@ -1,0 +1,11 @@
+name: "Update an existing Customer"
+request:
+    url: /customers/$customerRefId
+    method: PUT
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}
+    json: 
+      {
+        "firstName":"Update_Divya11",
+        "lastName":"Singla",
+      }

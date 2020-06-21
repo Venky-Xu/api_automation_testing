@@ -1,0 +1,14 @@
+name: "Add an item to Pricebook"
+request:
+    url: /priceBooks/$priceBookId/items
+    method: POST
+    headers: 
+        Authorization: Basic ${ENV(AUTH_TOKEN)}
+    json: 
+      {
+        "productId": "$productId",
+        "unitPrice": 0,
+        "taxCode": "",
+        "minQuantity": null,
+        "maxQuantity": null
+    }

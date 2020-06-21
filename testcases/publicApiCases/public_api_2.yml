@@ -75,8 +75,44 @@
       - eq: [status_code, 200]
   
 - test:
-    name: "Get customer lists"
-    api: api/Public_Api/create.yml
+    name: "Create a new customer"
+    api: api/Public_Api/createCustomer.yml
+    extract:
+      - customerRefId: content.refId
+    validate:
+      - eq: [status_code, 200] 
+
+- test:
+    name: "Update an existing customer"
+    api: api/Public_Api/updateCustomer.yml
+    validate:
+      - eq: [status_code, 200] 
+
+- test:
+    name: "Create a new PriceBook"
+    api: api/Public_Api/addPricebooks.yml
+    extract:
+      - priceBookId: content.id
+    validate:
+      - eq: [status_code, 200] 
+
+- test:
+    name: "Add an item in pricebook"
+    api: api/Public_Api/addPricebookItem.yml
+    extract:
+      - priceBookItemId: content.id
+    validate:
+      - eq: [status_code, 200] 
+
+- test:
+    name: "Get Pricebook items"
+    api: api/Public_Api/getPricebookItems.yml
+    validate:
+      - eq: [status_code, 200] 
+
+- test:
+    name: "Update Pricebook item"
+    api: api/Public_Api/updatePricebookItem.yml
     validate:
       - eq: [status_code, 200] 
 
@@ -86,16 +122,16 @@
     validate:
         - eq: [status_code, 200]
 
-- test:
-    name: "Add a transaction"
-    api: api/Public_Api/addTransaction.yml
-    extract:
-        refId: content.refId
-    validate:
-        - eq: [status_code, 200]
+# - test:
+#     name: "Add a transaction"
+#     api: api/Public_Api/addTransaction.yml
+#     extract:
+#         refId: content.refId
+#     validate:
+#         - eq: [status_code, 200]
 
-- test:
-    name: "Cancel a transaction"
-    api: api/Public_Api/cancelTransaction.yml
-    validate:
-        - eq: [status_code, 200]
+# - test:
+#     name: "Cancel a transaction"
+#     api: api/Public_Api/cancelTransaction.yml
+#     validate:
+#         - eq: [status_code, 200]

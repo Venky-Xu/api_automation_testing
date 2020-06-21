@@ -41,5 +41,13 @@ def get_datetime():
     return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
 def create_sku():
+<<<<<<< HEAD
     sku= "sku" + str(random.randint(500,100000))
     return sku
+=======
+    return "sku" + str(random.randint(500,100000))
+
+def create_unique_refid():
+    return str(uuid.uuid4())
+    
+>>>>>>> Added Pricebook test cases

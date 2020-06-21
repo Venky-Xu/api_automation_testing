@@ -7,4 +7,4 @@ request:
     json: 
       {
         "name": "addPriceBook",
-        "appliedStores":["5bb2dc608c3836222eed4685"]}
+        "appliedStores":["$storeId"]}
