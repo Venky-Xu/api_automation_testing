@@ -4,6 +4,7 @@
     variables:
       sku: ${create_sku()}
       uniqueRefId: ${create_unique_refid()}
+      receiptNumber: ${create_uuid_15()}
     base_url: ${ENV(PUBLIC_API_BASE_URL)}
 
 - test:
@@ -53,6 +54,7 @@
     api: api/Public_Api/createProduct.yml
     extract:
       - productId: content.id
+      - unitPrice: content.unitPrice
     validate:
       - eq: [status_code, 200]
 
@@ -79,8 +81,15 @@
     api: api/Public_Api/createCustomer.yml
     extract:
       - customerRefId: content.refId
+      - customerEmail: content.email
     validate:
       - eq: [status_code, 200] 
+
+- test:
+    name: "Get customer by email ID"
+    api: api/Public_Api/getCustomerbyEmail.yml
+    validate:
+      - eq: [status_code, 200]
 
 - test:
     name: "Update an existing customer"
@@ -117,21 +126,27 @@
       - eq: [status_code, 200] 
 
 - test:
+    name: "Remove an item in Pricebook"
+    api: api/Public_Api/removePricebookItem.yml
+    validate:
+      - eq: [status_code, 200] 
+
+- test:
     name: "Get Transactions"
     api: api/Public_Api/getTransactions.yml
     validate:
         - eq: [status_code, 200]
 
-# - test:
-#     name: "Add a transaction"
-#     api: api/Public_Api/addTransaction.yml
-#     extract:
-#         refId: content.refId
-#     validate:
-#         - eq: [status_code, 200]
+- test:
+    name: "Add a transaction"
+    api: api/Public_Api/addTransaction.yml
+    extract:
+        transactionRefId: content.refId
+    validate:
+        - eq: [status_code, 200]
 
-# - test:
-#     name: "Cancel a transaction"
-#     api: api/Public_Api/cancelTransaction.yml
-#     validate:
-#         - eq: [status_code, 200]
+- test:
+    name: "Cancel a transaction"
+    api: api/Public_Api/cancelTransaction.yml
+    validate:
+        - eq: [status_code, 200]

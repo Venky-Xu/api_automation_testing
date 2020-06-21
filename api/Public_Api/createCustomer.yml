@@ -9,5 +9,6 @@ request:
         "firstName":"Divya11",
         "lastName":"Singla",
         "phone":"60143636317",
+        "email":"divya.singla11@storehub.com",
         "refId":"$uniqueRefId"
       }

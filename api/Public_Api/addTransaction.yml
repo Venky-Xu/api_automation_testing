@@ -6,9 +6,9 @@ request:
         Authorization: Basic ${ENV(AUTH_TOKEN)}
     json: 
       {
-        "refId": "4D0D391B-2376-4A31-B510-D275080EE253",
-        "invoiceNumber": "0001810021128100",
-        "storeId": "5bb2dc608c3836222eed4685",
+        "refId": "$uniqueRefId",
+        "invoiceNumber": "$receiptNumber",
+        "storeId": "$storeId",
         "transactionType": "Sale",
         "transactionTime": "2020-06-19T15:55:02.377Z",
         "paymentMethod": "Cash",
@@ -18,7 +18,7 @@ request:
         "items": 
           [
             {
-              "productId": "$id",
+              "productId": "$productId",
               "quantity": 1,
               "total": $unitPrice,
               "subTotal": $unitPrice,
