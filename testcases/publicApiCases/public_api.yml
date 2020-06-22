@@ -6,6 +6,7 @@
       uniqueRefId: ${get_unique_refid()}
       receiptNumber: ${create_uuid_15()}
       timeZoneUTC: ${get_datetime()}
+      customerEmail
     base_url: ${ENV(PUBLIC_API_BASE_URL)}
 
 - test:
@@ -147,12 +148,6 @@
         - ${sleep(60)}
     extract:
         transactionRefId: content.refId
-    validate:
-        - eq: [status_code, 200]
-
-- test:
-    name: "Cancel a transaction"
-    api: api/Public_Api/cancelTransaction.yml
     validate:
         - eq: [status_code, 200]
 
