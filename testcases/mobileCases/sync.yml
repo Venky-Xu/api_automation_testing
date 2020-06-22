@@ -1,0 +1,81 @@
+- config:
+    name: "sync"
+
+
+- test:
+    name: "Sync employees"
+    api: api/Mobile/syncEmployees.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "Sync products"
+    api: api/Mobile/syncProducts.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "table layout"
+    api: api/Mobile/tableLayout.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "quick select layout"
+    api: api/Mobile/quickSelectLayout.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "promotions"
+    api: api/Mobile/promotions.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "price books"
+    api: api/Mobile/priceBooks.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "sync user actions"
+    api: api/Mobile/syncUserActions.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "sync store info"
+    api: api/Mobile/syncStoreInfo.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "employee count"
+    api: api/Mobile/employeeCount.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "product count"
+    api: api/Mobile/productCount.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "promotion count"
+    api: api/Mobile/promotionCount.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "price books count"
+    api: api/Mobile/priceBooksCount.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "shifts"
+    api: api/Mobile/shifts.yml
+    validate:
+        - eq: [status_code, 200]

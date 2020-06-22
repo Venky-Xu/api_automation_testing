@@ -1,0 +1,10 @@
+name: "onlineOrderStatus"
+request:
+    url: /api/onlineOrderStatus
+    method: POST
+    headers:
+        storehub-business: ${ENV(STOREHUB_BUSINESS)}
+        storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+        storehub-token: ${ENV(STOREHUB_TOKEN )}
+    json:
+      {"status":$nextStatus,"orderId":$orderId,"operatorId":"5ee092458f75e50007bb9d87","businessName":"apiautomation"}

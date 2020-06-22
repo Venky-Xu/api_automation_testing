@@ -1,0 +1,8 @@
+name: "onlineOrderStatusList"
+request:
+    url: /api/onlineOrderStatusList
+    method: GET
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}

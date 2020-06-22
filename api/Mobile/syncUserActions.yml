@@ -1,0 +1,10 @@
+name: "syncUserActions"
+request:
+    url: /api/syncUserActions
+    method: POST
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}
+    json:
+      {"storeId":"5ee092448f75e50007bb9d84","registerId":2,"userActionLogs":[]}

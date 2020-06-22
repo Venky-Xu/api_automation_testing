@@ -1,0 +1,8 @@
+name: "promotions"
+request:
+    url: /api/promotions
+    method: GET
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}

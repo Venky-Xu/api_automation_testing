@@ -1,0 +1,10 @@
+name: "onlineOrders"
+request:
+    url: /api/onlineOrders
+    method: POST
+    headers:
+        storehub-business: ${ENV(STOREHUB_BUSINESS)}
+        storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+        storehub-token: ${ENV(STOREHUB_TOKEN )}
+    json:
+      {"status":["paid","accepted","logisticsConfirmed"],"storeId":"5ee092448f75e50007bb9d84","businessName":"apiautomation","channel":3,"lastQRSyncDate":"2020-06-05T08:19:59.836Z"}

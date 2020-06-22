@@ -22,11 +22,6 @@
     validate:
         - eq: [status_code, 200]
 
-- test:
-    name: "shifts"
-    api: api/Mobile/shifts.yml
-    validate:
-        - eq: [status_code, 200]
 
 - test:
     name: "registerDeviceToken"
@@ -34,6 +29,31 @@
     validate:
         - eq: [status_code, 200]
 
+
+- test:
+    name: "badgeNumber"
+    api: api/Mobile/badgeNumber.yml
+    validate:
+        - eq: [status_code, 200]
+
+
+- test:
+    name: "onlineOrderStatusList"
+    api: api/Mobile/onlineOrderStatusList.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "clockIn"
+    api: api/Mobile/clockIn.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "clockOut"
+    api: api/Mobile/clockOut.yml
+    validate:
+        - eq: [status_code, 200]
 
 - test:
     name: "activateMultiChoose"

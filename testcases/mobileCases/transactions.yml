@@ -1,0 +1,34 @@
+- config:
+    name: "transactions"
+
+
+- test:
+    name: "online orders"
+    api: api/Mobile/onlineOrders.yml
+    extract:
+      - orderId: content.results.0.orderId
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "online order details"
+    api: api/Mobile/onlineOrderDetails.yml
+    extract:
+      - nextStatus: content.nextStatusTransitions.0
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "online order status"
+    api: api/Mobile/onlineOrderStatus.yml
+    extract:
+      - currentStatus: content.currentStatus
+    validate:
+        - eq: [status_code, 200]
+        - eq: [$currentStatus, $nextStatus]
+
+- test:
+    name: "online order logs"
+    api: api/Mobile/onlineOrderLogs.yml
+    validate:
+        - eq: [status_code, 200]

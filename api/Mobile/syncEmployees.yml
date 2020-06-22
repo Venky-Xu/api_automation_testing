@@ -1,0 +1,11 @@
+name: "syncEmployees"
+request:
+    url: /api/syncEmployees
+    method: GET
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}
+    params:
+      bn: "apiautomation"
+      storeId: "5ee092448f75e50007bb9d84"
