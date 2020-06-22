@@ -10,7 +10,7 @@ request:
         "invoiceNumber": "$receiptNumber",
         "storeId": "$storeId",
         "transactionType": "Sale",
-        "transactionTime": "2020-06-19T15:55:02.377Z",
+        "transactionTime": "$timeZoneUTC",
         "paymentMethod": "Cash",
         "total": $unitPrice,
         "subTotal": $unitPrice,

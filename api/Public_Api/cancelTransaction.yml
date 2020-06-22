@@ -1,6 +1,12 @@
 name: "Cancel a transaction"
+variables:
+      cancelTime: ${get_datetime()}
 request:
     url: /transactions/$transactionRefId/cancel
     method: POST
     headers: 
         Authorization: Basic ${ENV(AUTH_TOKEN)}
+    json:
+        {
+            "cancelledTime": "$cancelTime",
+            "cancelledBy": "$employeeId"}
