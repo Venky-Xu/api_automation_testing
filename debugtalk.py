@@ -28,7 +28,9 @@ def mail():
 
 
 def create_uuid_15():
-    uid = str(uuid.uuid4())
+    uid = str(uuid.uuid4().int)
     suid = ''.join(uid.split('-'))
     ssuid = suid[0:15]
     return ssuid
+
+
