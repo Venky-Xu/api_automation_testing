@@ -40,5 +40,5 @@ def get_unique_refid():
 
 
 def get_datetime():
-    return str(datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ"))
+    return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
 
