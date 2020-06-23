@@ -20,3 +20,7 @@ testcases:
 -
     name: activate flow
     testcase: testcases/mobileCases/activate.yml
+
+-
+    name: customer test cases
+    testcase: testcases/mobileCases/customer.yml

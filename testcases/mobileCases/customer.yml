@@ -7,19 +7,22 @@
       customerId: ${get_unique_refid()}
 
 - test:
-    name: "Get a list of all customers and Verify"
-    api: api/Mobile/searchCustomers.yml
-    extract:
-      - customerId: content.0.customerId
-      - email: content.0.email
-      - firstName: content.0.firstName
-      - lastName: content.0.lastName
-      - phone: content.0.phone
+    name: "Create a new customer"
+    api: api/Mobile/createCustomer.yml
     validate:
       - eq: [status_code, 200]
 
 - test:
-    name: "Search customer by phone number"
+    name: "Get a list of all customers and Verify"
+    api: api/Mobile/searchCustomers.yml
+    extract:
+      - customerId: content.1.customerId
+      - email: content.1.email
+    validate:
+      - eq: [status_code, 200]
+
+- test:
+    name: "Search customer by email"
     api: api/Mobile/getCustomerbyParameter.yml
     validate:
       - eq: [status_code, 200]
@@ -27,11 +30,5 @@
 - test:
     name: "Search customer's order history"
     api: api/Mobile/getCustomerOrderHistory.yml
-    validate:
-      - eq: [status_code, 200]
-
-- test:
-    name: "Create a new customer"
-    api: api/Mobile/createCustomer.yml
     validate:
       - eq: [status_code, 200]

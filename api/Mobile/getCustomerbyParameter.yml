@@ -1,6 +1,6 @@
 name: "searchCustomersbyParameter"
 request:
-    url: /api/searchCustomers?bn=${ENV(STOREHUB_BUSINESS)}&history=true&searchText=$phone
+    url: /api/searchCustomers?bn=${ENV(STOREHUB_BUSINESS)}&history=true&searchText=$email
     method: GET
     headers:
       storehub-business: ${ENV(STOREHUB_BUSINESS)}
