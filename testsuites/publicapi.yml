@@ -1,10 +1,12 @@
-- config:
+config:
     name: "Products, Transactions, Customers, Pricebook, Purchase Orders, Stores, Timesheet, Inventory"
+    verify: False
 
 
--testcases:
+
+testcases:
 -
     name: Public Api
-    testcase: testcases/mobileCases/publicApi.yml
+    testcase: testcases/publicApiCases/publicApi.yml
 
   

@@ -144,7 +144,7 @@
     name: "Add a transaction"
     api: api/Public_Api/addTransaction.yml
     setup_hooks:
-        - ${sleep(60)}
+        - ${sleep(5)}
     extract:
         transactionRefId: content.refId
     validate:
