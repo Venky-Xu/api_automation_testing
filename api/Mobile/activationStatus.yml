@@ -7,5 +7,5 @@ request:
       storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
       storehub-token: ${ENV(STOREHUB_TOKEN )}
     params:
-      device: "%7B%22version%22%3A%222.31.3.1%22%2C%22systemVersion%22%3A%2212.1.4%22%2C%22model%22%3A%22iPad%22%2C%22platform%22%3A%22iOS%22%7D"
-      location: "%7B%0A%20%20%22type%22%20%3A%20%22Point%22%2C%0A%20%20%22coordinates%22%20%3A%20%5B%0A%20%20%20%20121.44048690185205%2C%0A%20%20%20%2031.25506591796875%0A%20%20%5D%0A%7D%20"
+      device: ${ENV(DEVICE)}
+      location: ${ENV(LOCATION)}
