@@ -22,9 +22,14 @@ testcases:
     testcase: testcases/mobileCases/activate.yml
 
 -
+<<<<<<< HEAD
     name: Sync
     testcase: testcases/mobileCases/sync.yml
 
 -
     name: Transactions
     testcase: testcases/mobileCases/transactions.yml
+=======
+    name: customer test cases
+    testcase: testcases/mobileCases/customer.yml
+>>>>>>> customer_new

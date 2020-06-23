@@ -1,0 +1,11 @@
+name: "searchCustomersbyParameter"
+request:
+    url: /api/searchCustomers?bn=${ENV(STOREHUB_BUSINESS)}&history=true&searchText=$email
+    method: GET
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}
+      storehub-version: 2.31.3.1
+      User-Agent: StoreHub/2.31.3 (iPad; iOS 12.1.4; Scale/2.00)
+      Cookie: storehubhq.locale=en; connect.sid=s%3AmOyIWhPquxhghkQfb8e5Fnk0hdiR3vR8.6ItEOPQl7l7PeAJGjpTDiz%2BInEvBTlcmZNQK09ukB8I

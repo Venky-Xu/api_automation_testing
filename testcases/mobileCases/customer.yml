@@ -1,0 +1,34 @@
+- config:
+    name: "Customer API test cases"
+    base_url: ${ENV(POS_TEST16)}
+    variables:
+      customerEmail: ${mail()}
+      modifiedTime: ${get_datetime()}
+      customerId: ${get_unique_refid()}
+
+- test:
+    name: "Create a new customer"
+    api: api/Mobile/createCustomer.yml
+    validate:
+      - eq: [status_code, 200]
+
+- test:
+    name: "Get a list of all customers and Verify"
+    api: api/Mobile/searchCustomers.yml
+    extract:
+      - customerId: content.1.customerId
+      - email: content.1.email
+    validate:
+      - eq: [status_code, 200]
+
+- test:
+    name: "Search customer by email"
+    api: api/Mobile/getCustomerbyParameter.yml
+    validate:
+      - eq: [status_code, 200]
+
+- test:
+    name: "Search customer's order history"
+    api: api/Mobile/getCustomerOrderHistory.yml
+    validate:
+      - eq: [status_code, 200]
