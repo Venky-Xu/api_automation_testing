@@ -7,8 +7,8 @@ request:
       Cookie: storehubhq.locale=en; connect.sid=s%3AjyY6aXLM57IPtAzYVwA8Ng6Yn5W3K0Hf.5D8BNAkqfI8XCgJR8v6aYPzijQS1rfTFhnSViUO%2F%2FBg
     json:
       {
-        "business": ${ENV(STOREHUB_BUSINESS)},
-        "email": ${ENV(EMAIL)},
-        "password":${ENV(PASSWORD)},
-        "code":$code
-        }
+       "business": "${ENV(STOREHUB_BUSINESS)}",
+       "email":  "${ENV(EMAIL)}",
+       "password": "${ENV(PASSWORD)}",
+       "code": $code
+      }

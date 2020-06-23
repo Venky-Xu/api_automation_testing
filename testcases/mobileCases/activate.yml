@@ -66,7 +66,7 @@
 
 - test:
     name: "activate"
-    api: api/Mobile/activate.yml
+    api: api/Mobile/activateSingle.yml
     extract:
         - business_name: content.name
         - register_object_id: content.registerObjectId

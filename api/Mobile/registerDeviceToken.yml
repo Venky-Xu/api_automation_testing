@@ -7,4 +7,8 @@ request:
       storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
       storehub-token: ${ENV(STOREHUB_TOKEN )}
     json:
-      {"business":"apiautomation","registerId":"5ee092448f75e50007bb9d85","token": "3ac42690aafe11eaa15d89a559b7c9ed"}
+      {
+        "business":"${ENV(STOREHUB_BUSINESS)}",
+        "registerId":"${ENV(STOREHUB_REGISTERID)}",
+        "token": "${ENV(STOREHUB_TOKEN )}"
+      }

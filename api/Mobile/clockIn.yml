@@ -1,4 +1,6 @@
 name: "clockIn"
+variables:
+  time: ${get_datetime()}
 request:
     url: /api/clockIn
     method: POST
@@ -8,8 +10,8 @@ request:
         storehub-token: ${ENV(STOREHUB_TOKEN )}
     json:
       {
-          "storeId":"5ee092448f75e50007bb9d84",
-          "clockInTime":"2020-06-08T10:42:59.804Z",
-          "employeeId":"5ee092458f75e50007bb9d87",
-          "business":"apiautomation"
+          "storeId":"${ENV(STOREID)}",
+          "clockInTime": $time,
+          "employeeId":"${ENV(EMPLOYEEID)}",
+          "business": "${ENV(STOREHUB_BUSINESS)}"
       }

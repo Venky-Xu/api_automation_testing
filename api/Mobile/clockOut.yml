@@ -1,4 +1,6 @@
 name: "clockOut"
+variables:
+  time: ${get_datetime()}
 request:
     url: /api/clockOut
     method: POST
@@ -7,4 +9,9 @@ request:
         storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
         storehub-token: ${ENV(STOREHUB_TOKEN )}
     json:
-      {"storeId":"5ee092448f75e50007bb9d84","clockOutTime":"2020-06-08T10:44:09.589Z","employeeId":"5ee092458f75e50007bb9d87","business":"apiautomation"}
+      {
+          "storeId": "${ENV(STOREID)}",
+          "clockOutTime": $time,
+          "employeeId": "${ENV(EMPLOYEEID)}",
+          "business": "${ENV(STOREHUB_BUSINESS)}"
+      }
