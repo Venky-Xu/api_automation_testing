@@ -7,5 +7,5 @@ request:
       storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
       storehub-token: ${ENV(STOREHUB_TOKEN )}
     params:
-      bn: "apiautomation"
+      bn: ${ENV(STOREHUB_BUSINESS)}
       registerId: ${ENV(STOREHUB_REGISTERID)}

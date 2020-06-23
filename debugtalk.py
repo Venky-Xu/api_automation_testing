@@ -41,5 +41,6 @@ def create_sku():
 def get_unique_refid():
     return str(uuid.uuid4())
 
+
 def get_datetime():
     return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")

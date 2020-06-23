@@ -7,4 +7,9 @@ request:
         storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
         storehub-token: ${ENV(STOREHUB_TOKEN )}
     json:
-      {"status":$nextStatus,"orderId":$orderId,"operatorId":"5ee092458f75e50007bb9d87","businessName":"apiautomation"}
+      {
+          "status":$nextStatus,
+          "orderId":$orderId,
+          "operatorId":"${ENV(EMPLOYEEID)}",
+          "businessName":"${ENV(STOREHUB_BUSINESS)}"
+      }

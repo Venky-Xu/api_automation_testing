@@ -1,4 +1,6 @@
 name: "onlineOrders"
+variables:
+  time: ${get_datetime()}
 request:
     url: /api/onlineOrders
     method: POST
@@ -7,4 +9,10 @@ request:
         storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
         storehub-token: ${ENV(STOREHUB_TOKEN )}
     json:
-      {"status":["paid","accepted","logisticsConfirmed"],"storeId":"5ee092448f75e50007bb9d84","businessName":"apiautomation","channel":3,"lastQRSyncDate":"2020-06-05T08:19:59.836Z"}
+      {
+          "status":["paid","accepted","logisticsConfirmed"],
+          "storeId":"${ENV(STOREID)}",
+          "businessName":"${ENV(STOREHUB_BUSINESS)}",
+          "channel":3,
+          "lastQRSyncDate":$time
+      }

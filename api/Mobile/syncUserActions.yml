@@ -7,4 +7,8 @@ request:
       storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
       storehub-token: ${ENV(STOREHUB_TOKEN )}
     json:
-      {"storeId":"5ee092448f75e50007bb9d84","registerId":2,"userActionLogs":[]}
+      {
+        "storeId":"${ENV(STOREID)}",
+        "registerId":2,
+        "userActionLogs":[]
+      }
