@@ -1,0 +1,11 @@
+- config:
+    name: "products"
+    verify: False
+    base_url: ${ENV(POS_TEST16)}
+
+
+- test:
+    name: "Get product stocks"
+    api: api/Mobile/getStocks.yml
+    validate:
+        - eq: [status_code, 200]
