@@ -15,3 +15,9 @@
     api: api/Mobile/getCollectionProducts.yml
     validate:
         - eq: [status_code, 200]
+
+- test:
+    name: "Mark a product sold out"
+    api: api/Mobile/markProductSoldOut.yml
+    validate:
+        - eq: [status_code, 200]
