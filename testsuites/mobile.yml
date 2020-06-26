@@ -31,6 +31,9 @@ testcases:
     testcase: testcases/mobileCases/transactions.yml
 
 -
-    name: customer test cases
+    name: Customer
     testcase: testcases/mobileCases/customer.yml
 
+-
+    name: Product Stock, Collection Products & Mark Product Sold
+    testcase: testcases/mobileCases/products.yml
