@@ -1,0 +1,81 @@
+name: "postTransactionRecords"
+variables:
+  time: ${get_datetime()}
+  transaction_id: ${uuid_32()}
+  receipt_number: ${create_receipt_number()}
+request:
+    url: /api/transactionRecords
+    method: POST
+    headers:
+      storehub-business: ${ENV(STOREHUB_BUSINESS)}
+      storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+      storehub-token: ${ENV(STOREHUB_TOKEN )}
+    json:
+      {
+        "appVersion": "2.31.0",
+        "business": "${ENV(STOREHUB_BUSINESS)}",
+        "cashTendered": 0,
+        "createdTime": $time,
+        "depositAmount": 0,
+        "discount": 0,
+        "employeeNumber": "${ENV(EMPLOYEEID)}",
+        "enableCashback": 0,
+        "headcount": 0,
+        "invoiceSeqNumber": 0,
+        "isCancelled": 0,
+        "isOpen": 0,
+        "items": [{
+                    "adhocDiscount": 0,
+                    "discount": 0,
+                    "loyaltyDiscount": 0,
+                    "loyaltyDiscountTax": 0,
+                    "orderingValue": 1,
+                    "productId": "${ENV(PRODUCTID)}",
+                    "promotions": [],
+                    "pwdDiscount": 0,
+                    "quantity": 1,
+                    "seniorDiscount": 0,
+                    "subTotal": "2.83",
+                    "tax": "0.1699999999999999",
+                    "taxCode": "5b87d4c8a26a370eefda8c72",
+                    "taxExemptAmount": 0,
+                    "taxableAmount": 0,
+                    "title": "BOX 1",
+                    "total": 2.83,
+                    "unitPrice": 2.830188679245283
+                  }],
+        "location": {
+          "coordinates": ["106.0779421227892",
+                          "30.78877258300781"
+          ],
+          "type": "Point"
+        },
+        "modifiedTime": $time,
+        "pax": 2,
+        "payments": [{
+                       "amount": 3,
+                       "cashTendered": 3,
+                       "isDeposit": 0,
+                       "paymentMethod": "Cash",
+                       "roundedAmount": 0
+                     }],
+        "promotions": [],
+        "pwdCount": 0,
+        "pwdDiscount": 0,
+        "receiptNumber": $receipt_number,
+        "registerId": "${ENV(STOREHUB_REGISTERID)}",
+        "roundedAmount": 0,
+        "seniorDiscount": 0,
+        "seniorsCount": 0,
+        "serviceChargeRate": 0,
+        "storeId": "${ENV(STOREID)}",
+        "subtotal": "2.83",
+        "tax": "0.1699999999999999",
+        "taxExemptedSales": 0,
+        "taxableSales": 0,
+        "total": 3,
+        "totalDeductedTax": 0,
+        "transactionId": $transaction_id,
+        "transactionType": "Sale",
+        "zeroRatedSales": 0
+      }
