@@ -34,9 +34,16 @@ def create_uuid_15():
     ssuid = suid[0:15]
     return ssuid
 
+
+def uuid_32():
+    uuid32 = str(uuid.uuid5(uuid.NAMESPACE_DNS, str(uuid.uuid1())))
+    return uuid32
+
+
 def create_sku():
     sku= "sku" + str(random.randint(500,100000))
     return sku
+
 
 def get_unique_refid():
     return str(uuid.uuid4())
@@ -44,3 +51,9 @@ def get_unique_refid():
 
 def get_datetime():
     return datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S.%fZ")
+
+
+def create_receipt_number():
+    return "001"+datetime.now().strftime("%y%m%d%H%M%S")+str(random.randint(1, 9))
+
+

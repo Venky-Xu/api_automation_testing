@@ -32,3 +32,32 @@
     api: api/Mobile/onlineOrderLogs.yml
     validate:
         - eq: [status_code, 200]
+
+- test:
+    name: "post transaction records"
+    api: api/Mobile/postTransactionRecords.yml
+    extract:
+        - receiptNumber: content.receiptNumber
+    validate:
+        - eq: [status_code, 200]
+
+
+- test:
+    name: "get transaction records"
+    api: api/Mobile/getTransactionRecords.yml
+    validate:
+        - eq: [status_code, 200]
+
+
+- test:
+    name: "returns"
+    api: api/Mobile/returns.yml
+    validate:
+        - eq: [status_code, 200]
+
+
+- test:
+    name: "searchTransactionRecords"
+    api: api/Mobile/searchTransactionRecords.yml
+    validate:
+        - eq: [status_code, 200]
