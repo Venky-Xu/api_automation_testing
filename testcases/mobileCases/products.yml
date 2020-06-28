@@ -1,0 +1,20 @@
+- config:
+    name: "products"
+
+- test:
+    name: "Get product stocks"
+    api: api/Mobile/getProductStocks.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "Get products list in Collections"
+    api: api/Mobile/getCollectionProducts.yml
+    validate:
+        - eq: [status_code, 200]
+
+- test:
+    name: "Mark a product sold out"
+    api: api/Mobile/markProductSoldOut.yml
+    validate:
+        - eq: [status_code, 200]
