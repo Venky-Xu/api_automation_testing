@@ -54,3 +54,10 @@
     api: api/Mobile/returns.yml
     validate:
         - eq: [status_code, 200]
+
+
+- test:
+    name: "searchTransactionRecords"
+    api: api/Mobile/searchTransactionRecords.yml
+    validate:
+        - eq: [status_code, 200]
