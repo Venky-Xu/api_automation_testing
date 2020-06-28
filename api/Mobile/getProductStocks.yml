@@ -1,0 +1,9 @@
+name: "getProductStocks"
+request:
+    url: /api/stocks?employeeId=${ENV(EMPLOYEEID)}&productId=${ENV(PRODUCTID)}
+    method: GET
+    headers:
+        storehub-business: ${ENV(STOREHUB_BUSINESS)}
+        storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+        storehub-token: ${ENV(STOREHUB_TOKEN)}
+        storehub-version: ${ENV(STOREHUB_VERSION)}

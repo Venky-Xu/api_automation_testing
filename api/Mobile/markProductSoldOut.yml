@@ -1,0 +1,15 @@
+name: "markProductSoldOut"
+request:
+    url: /api/products/markSoldOut
+    method: POST
+    headers:
+        storehub-business: ${ENV(STOREHUB_BUSINESS)}
+        storehub-registerId: ${ENV(STOREHUB_REGISTERID)}
+        storehub-token: ${ENV(STOREHUB_TOKEN)}
+        storehub-version: ${ENV(STOREHUB_VERSION)}
+    json:
+      {
+        "productIds":["${ENV(PRODUCTID)}"],
+        "businessName":"${ENV(STOREHUB_BUSINESS)}",
+        "isSoldOut":true
+      }
