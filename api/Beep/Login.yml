@@ -1,0 +1,15 @@
+name : getLogin
+#base_url: "https://wenjingzhang.beep.test16.shub.us"
+request:
+  url: /api/login
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive
+  json:
+    {
+      "accessToken": $access_token,
+      "refreshToken": $refresh_token
+    }
+
