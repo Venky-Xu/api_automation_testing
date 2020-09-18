@@ -1,0 +1,9 @@
+name: getCustomer
+request:
+  url: /api/consumers/$consumerId/customer
+  method: GET
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive
+    Token: $webToken

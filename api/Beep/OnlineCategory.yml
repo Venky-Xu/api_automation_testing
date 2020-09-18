@@ -1,0 +1,8 @@
+name: getOnlineCategory
+request:
+  url: /api/gql/OnlineCategory
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive

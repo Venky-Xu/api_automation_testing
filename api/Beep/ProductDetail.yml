@@ -1,0 +1,12 @@
+name: getProductDetail
+request:
+  url: /api/gql/ProductDetail
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive
+  json:
+    {
+      productId: $product_id
+    }

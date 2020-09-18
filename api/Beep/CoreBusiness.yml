@@ -1,0 +1,13 @@
+name: getCoreStores
+request:
+  url: /api/gql/CoreBusiness
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive
+  json:
+    {
+      business_name: "wenjingzhang",
+      storeid: $storeid
+    }

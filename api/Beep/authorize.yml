@@ -1,0 +1,18 @@
+name : getAuth
+base_url: "https://auth-api.test16.shub.us"
+request:
+  url: /authorize
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive
+  json:
+    {
+       business_name: "wenjingzhang",
+       client: "beep",
+       grant_type: "otp",
+       password: "11111",
+       username: "+8613132301729"
+    }
+

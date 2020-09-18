@@ -1,0 +1,31 @@
+name: getOrder
+request:
+  url: /api/gql/CreateOrder
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive
+  json:
+    {
+      "business": "wenjingzhang",
+      "storeId": $storeid,
+      "shoppingCartIds": [
+        $shoppingCartIds
+      ],
+      "tableId": "",
+      "cashback": $cashback,
+      "orderSource": "BeepStore",
+      "shippingType": "delivery",
+      "deliveryAddressInfo": {
+        "phone": "+8613132301729",
+        "name": "test",
+        "address": "KYM Tower, Jalan PJU 7/6, Mutiara Damansara, Petaling Jaya, Selangor, Malaysia",
+        "country": "MY",
+        "deliveryTo": "KYM Tower, Jalan PJU 7/6, Mutiara Damansara, Petaling Jaya, Selangor, Malaysia",
+        "location": {
+          "longitude": 101.6141592,
+          "latitude": 3.1615363
+        }
+      }
+    }

@@ -1,0 +1,25 @@
+name: getShoppingCartItem
+request:
+  url: /api/gql/AddOrUpdateShoppingCartItem
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive
+  json:
+    {
+      "action":"add",
+      "business":"wenjingzhang",
+      "productId": $product_id,
+      "quantity": 1,
+      "variations": [
+       {
+        "variationId": $variant_id0,
+        "optionId": $option_id0
+      },
+       {
+         "variationId": "5f3de9bc54a3c80006021ed7",
+         "optionId": "5f3de9bc54a3c80006021ed9"
+       }
+      ]
+    }
