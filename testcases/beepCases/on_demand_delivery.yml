@@ -1,0 +1,210 @@
+config:
+   name: "On demand Delivery"
+   variables:
+     type: delivery
+     business: mobileautomation
+     cookie__s: __s
+     locations: {latitude: 3.146642,
+                longitude: 101.6958449}
+     deliverycoords: 3.146642,101.6958449
+     fulfilldate: null
+     phone: null
+     name: null
+     tablename: null
+
+teststeps:
+-
+    name: Enter beep for the first time _ get category
+    api: api/Beep/OnlineCategory.yml
+    extract:
+      - cookie: cookies
+    validate:
+        - eq: [status_code,200]
+
+-
+    name: Enter beep for the first time _ get core business
+    variables:
+      store_id: null
+    api: api/Beep/CoreBusiness.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Enter beep for the first time _ get core stores
+    variables:
+      location: null
+    api: api/Beep/CoreStores.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Enter beep for the first time _ get online store info
+    api: api/Beep/OnlineStoreInfo.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Direct to location date page from menu_ get core stores
+    variables:
+      location: null
+    api: api/Beep/CoreStores.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Enter deliver to page _ get core business
+    variables:
+      store_id: null
+    api: api/Beep/CoreBusiness.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Select deliver to address _ get core stores
+    variables:
+            location: $locations
+    api: api/Beep/CoreStores.yml
+    extract:
+      - storeid: content.data.business.stores.0.id
+    validate:
+      - eq: [status_code,200]
+      - eq: [$storeid,5f4dec262569300006bf19bb]
+
+-
+    name: Back to location date page from Deliver to page _ get core stores
+    variables:
+      location: null
+    api: api/Beep/CoreStores.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Back to location date page from Deliver to page _ get core business
+    variables:
+      store_id: $storeid
+    api: api/Beep/CoreBusiness.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Enter beep for with location and date _ get category
+    api: api/Beep/OnlineCategory.yml
+    extract:
+      - productid: content.data.onlineCategory.0.products.0.id
+    validate:
+        - eq: [status_code,200]
+
+-
+    name: Enter beep for with location and date _ get core business
+    variables:
+      store_id: $storeid
+    api: api/Beep/CoreBusiness.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Enter beep for with location and date _ get core stores
+    variables:
+      location: null
+    api: api/Beep/CoreStores.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Enter beep for with location and date _ get online store info
+    api: api/Beep/OnlineStoreInfo.yml
+    validate:
+      - eq: [status_code,200]
+
+-
+    name: Click an item _ get product details
+    variables:
+      product_id: $productid
+    api: api/Beep/ProductDetail.yml
+    extract:
+      - variant_id0: content.data.product.variations.0.id
+      - option_id0: content.data.product.variations.0.optionValues.0.id
+
+-
+     name: Click an item _ get cart
+     variables:
+      cookies: ${set_cookie__s($cookie,$storeid)}
+     api: api/Beep/Cart.yml
+     extract:
+       - total: content.total
+       - item: content.items
+     validate:
+       - eq: [status_code,200]
+       - eq: [$total,0]
+       - len_eq: [$item, 0]
+
+-
+     name: Compelte adding item to cart _ Add Shopping Cart Item
+     api: api/Beep/ShoppingCartItem.yml
+     extract:
+       - shoppingCartIds: content.data.addOrUpdateShoppingCartItem.shoppingCartItem.id
+     validate:
+       - eq: [status_code,200]
+
+-
+     name: Compelte adding item to cart _ get cart
+     variables:
+      cookies: ${set_cookie__s($cookie,$storeid)}
+     api: api/Beep/Cart.yml
+     extract:
+       - subtotal: content.subtotal
+       - items: content.items
+     validate:
+       - ne: [$subtotal,0]
+       - len_eq: [$items, 1]
+       - eq: [status_code,200]
+
+-
+    name: Customer use cashback via login _ get Auth
+    api: api/Beep/authorize.yml
+    extract:
+      - access_token: content.access_token
+      - refresh_token: content.refresh_token
+    validate:
+        - eq: [status_code,200]
+
+-
+    name: Customer use cashback via login _ get Login
+    api: api/Beep/Login.yml
+    extract:
+      - consumerId: content.consumerId
+      - webToken: content.webToken
+    validate:
+       - eq: [status_code,200]
+
+-
+     name: Customer use cashback via login _ get Customer
+     api: api/Beep/Customer.yml
+     extract:
+       - storeCreditsBalance: content.storeCreditsBalance
+     validate:
+       - eq: [status_code,200]
+       - gt: [$storeCreditsBalance,0]
+
+-
+     name: After login in _ get cart
+     variables:
+      deliveryCoords: locations
+      cookies: ${set_cookie__s($cookie,$storeid)}
+     api: api/Beep/Cart.yml
+     extract:
+       - cashback: content.totalCashback
+     validate:
+       - eq: [status_code,200]
+       - ne: [$cashback,0]
+
+-
+     name: use cashback without delvery fee _ create order
+     variables:
+       expectDeliveryDateFrom: null
+       expectDeliveryDateTo: null
+     api: api/Beep/createOrder.yml
+     extract:
+       - orderId: content.data.orders.0.orderId
+     validate:
+       - eq: [status_code,200]

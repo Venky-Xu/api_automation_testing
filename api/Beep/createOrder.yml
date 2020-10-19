@@ -8,24 +8,30 @@ request:
     Connection: keep-alive
   json:
     {
-      "business": "wenjingzhang",
+      "business": $business,
       "storeId": $storeid,
       "shoppingCartIds": [
         $shoppingCartIds
       ],
-      "tableId": "",
+      "tableId": $tablename,
+      "expectDeliveryDateFrom": $expectDeliveryDateFrom,
+      "expectDeliveryDateTo": $expectDeliveryDateTo,
       "cashback": $cashback,
       "orderSource": "BeepStore",
-      "shippingType": "delivery",
+      "shippingType": $type,
+      "contactDetail": {
+                         "phone": $phone,
+                         "name": $name
+      },
       "deliveryAddressInfo": {
-        "phone": "+8613132301729",
+        "phone": "+60165000000",
         "name": "test",
         "address": "KYM Tower, Jalan PJU 7/6, Mutiara Damansara, Petaling Jaya, Selangor, Malaysia",
         "country": "MY",
         "deliveryTo": "KYM Tower, Jalan PJU 7/6, Mutiara Damansara, Petaling Jaya, Selangor, Malaysia",
         "location": {
-          "longitude": 101.6141592,
-          "latitude": 3.1615363
+          "longitude": 101.6958449,
+          "latitude": 3.146642
         }
       }
     }

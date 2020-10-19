@@ -9,10 +9,10 @@ request:
     Connection: keep-alive
   json:
     {
-       business_name: "wenjingzhang",
+       business_name: $business,
        client: "beep",
        grant_type: "otp",
        password: "11111",
-       username: "+8613132301729"
+       username: "+60165000000"
     }
 

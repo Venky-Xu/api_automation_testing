@@ -1,0 +1,9 @@
+name : get online store info
+
+request:
+  url: /api/gql/OnlineStoreInfo
+  method: POST
+  headers:
+    Accept: application/json
+    Content-Type: application/json
+    Connection: keep-alive

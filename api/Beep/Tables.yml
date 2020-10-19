@@ -1,6 +1,6 @@
-name: getCoreStores
+name: getTables
 request:
-  url: /api/gql/CoreBusiness
+  url: /api/gql/Tables
   method: POST
   headers:
     Accept: application/json

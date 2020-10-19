@@ -6,3 +6,7 @@ request:
     Accept: application/json
     Content-Type: application/json
     Connection: keep-alive
+  json:
+    {
+      "fulfillDate:": $fulfilldate
+    }

@@ -1,6 +1,6 @@
-name: getCoreStores
+name: Ordering
 request:
-  url: /api/gql/CoreBusiness
+  url: /api/ordering/stores/$storeid
   method: POST
   headers:
     Accept: application/json
@@ -8,6 +8,7 @@ request:
     Connection: keep-alive
   json:
     {
-      business_name: $business,
-      storeId: $store_id
+      "tableId": $tablename
     }
+  params:
+    a: $a

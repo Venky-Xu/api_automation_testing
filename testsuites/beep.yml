@@ -1,0 +1,29 @@
+config:
+    name: "Beep core flow: dine in, take away, on demand delivery, on demand pickup, pre order delivery, pre order pickup"
+    verify: False
+    base_url: ${ENV(BEEP_TEST16)}
+
+testcases:
+-
+    name: dine in
+    testcase: testcases/beepCases/dine_in.yml
+
+-
+    name: take away
+    testcase: testcases/beepCases/take_away.yml
+
+-
+    name: on demand delivery
+    testcase: testcases/beepCases/on_demand_delivery.yml
+
+-
+    name: on demand pickup
+    testcase: testcases/beepCases/on_demand_pickup.yml
+
+-
+    name: pre order delivery
+    testcase: testcases/beepCases/pre_order_delivery.yml
+
+-
+    name: pre order pickup
+    testcase: testcases/beepCases/pre_order_pickup.yml

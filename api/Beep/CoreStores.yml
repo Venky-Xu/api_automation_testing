@@ -8,5 +8,6 @@ request:
     Connection: keep-alive
   json:
     {
-      business_name: "wenjingzhang"
+      business_name: $business,
+      location: $location
     }

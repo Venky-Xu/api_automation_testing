@@ -9,17 +9,8 @@ request:
   json:
     {
       "action":"add",
-      "business":"wenjingzhang",
-      "productId": $product_id,
+      "business":$business,
+      "productId": $productid,
       "quantity": 1,
-      "variations": [
-       {
-        "variationId": $variant_id0,
-        "optionId": $option_id0
-      },
-       {
-         "variationId": "5f3de9bc54a3c80006021ed7",
-         "optionId": "5f3de9bc54a3c80006021ed9"
-       }
-      ]
+      "variations":[]
     }

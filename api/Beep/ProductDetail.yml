@@ -8,5 +8,6 @@ request:
     Connection: keep-alive
   json:
     {
-      productId: $product_id
+      productId: $product_id,
+      fulillDate: $fulfilldate
     }
